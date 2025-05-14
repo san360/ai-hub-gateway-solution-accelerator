@@ -4,7 +4,7 @@
             <emit-metric name="AI Throttling" value="1" namespace="throttling-events">
                 <dimension name="API ID" />
                 <dimension name="Operation ID" />
-                <!-- <dimension name="Subscription ID" /> -->
+                <dimension name="Service Degradation" value="@((string)context.Variables["service-degradation"] ?? "NA")" />
                 <dimension name="Location" />
                 <dimension name="Product Name" value="@(context.Product?.Name?.ToString() ?? "Portal-Admin")" />
                 <dimension name="Deployment Name" value="@((string)context.Variables["target-deployment"])" />
